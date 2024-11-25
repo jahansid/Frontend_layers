@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import design1Image from "@/assets/images/design-example-1.png";
 import design2Image from "@/assets/images/design-example-2.png";
+import Pointer from "@/components/Pointer";
 import Image from "next/image";
 
 export default function Hero() {
@@ -12,6 +13,12 @@ export default function Hero() {
                 </div>
                 <div className=" absolute -right-64 -top-16 hidden lg:block">
                     <Image src={design2Image} alt="design2image" />
+                </div>
+                <div className=" absolute left-56 top-96 hidden lg:block">
+                    <Pointer name="Anjali" />
+                </div>
+                <div className=" absolute right-80 -top-4 hidden lg:block">
+                    <Pointer name="Jahan" />
                 </div>
                 <div className=" flex items-center justify-center">
                     <div className=" inline-flex text-base px-3 py-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full text-neutral-950 font-semibold">
