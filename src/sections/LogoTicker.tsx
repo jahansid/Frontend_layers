@@ -7,17 +7,30 @@ import apexLogo from "@/assets/images/apex.svg";
 import celestialLogo from "@/assets/images/celestial.svg";
 import twiceLogo from "@/assets/images/twice.svg";
 
-const logos = [
-    { name: "Quantum", image: quantumLogo },
-    { name: "Acme Corp", image: acmeLogo },
-    { name: "Echo Valley", image: echoValleyLogo },
-    { name: "Pulse", image: pulseLogo },
-    { name: "Outside", image: outsideLogo },
-    { name: "Apex", image: apexLogo },
-    { name: "Celestial", image: celestialLogo },
-    { name: "Twice", image: twiceLogo },
+const logosData = [
+    { name: "Quantum", logoImage: quantumLogo },
+    { name: "Acme Corp", logoImage: acmeLogo },
+    { name: "Echo Valley", logoImage: echoValleyLogo },
+    { name: "Pulse", logoImage: pulseLogo },
+    { name: "Outside", logoImage: outsideLogo },
+    { name: "Apex", logoImage: apexLogo },
+    { name: "Celestial", logoImage: celestialLogo },
+    { name: "Twice", logoImage: twiceLogo },
 ];
 
-export default function LogoTicker() {
-    return <div>Logo Ticker</div>;
-}
+const LogoTicker = () => {
+    return (
+        <section className=" py-24 overflow-x-clip">
+            <div className="container">
+                <h3>Already chosen by these market leaders.</h3>
+                <div>
+                <div>  
+                       
+                    </div>  
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default LogoTicker;
