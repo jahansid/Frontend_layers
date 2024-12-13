@@ -5,6 +5,7 @@ import avatar2 from "@/assets/images/avatar-florence-shaw.jpg";
 import avatar3 from "@/assets/images/avatar-lula-meyers.jpg";
 import Image from "next/image";
 import Avatar from "@/components/Avatar";
+import Key from "@/components/Key";
 const features = [
     "Asset Library",
     "Code Preview",
@@ -71,14 +72,26 @@ export default function Features() {
                         title="Interactive Prototyping"
                         description="Engage your clients with protypes that react to user actions"
                     >
-                        {" "}
+                        <div className=" aspect-video flex items-center justify-center">
+                            <p className=" text-4xl font-extrabold text-center text-white/30">
+                                We&apos;ve achieved{" "}
+                                <span className=" bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                                    incredible
+                                </span>{" "}
+                                growth this year
+                            </p>
+                        </div>
                     </FeatureCard>
                     {/* third feature card */}
                     <FeatureCard
                         title="Keyboard Quick Actions"
                         description="Powerful commands to help you create designs more quickly"
                     >
-                        {" "}
+                        <div className=" aspect-video flex items-center justify-center gap-4">
+                            <Key className=" w-28">Shift</Key>
+                            <Key>Alt</Key>
+                            <Key>C</Key>
+                        </div>
                     </FeatureCard>
                 </div>
                 <div>
