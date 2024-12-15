@@ -1,3 +1,5 @@
+import Tag from "@/components/Tag";
+
 const integrations = [
     { name: "Figma", icon: "figma-logo.svg", description: "Figma is a collaborative interface design tool." },
     { name: "Notion", icon: "notion-logo.svg", description: "Notion is an all-in-one workspace for notes and docs." },
@@ -8,5 +10,21 @@ const integrations = [
 ];
 
 export default function Integrations() {
-    return <div>Integrations</div>;
+    return <section className=" py-24">
+        <div className=" container">
+            <div className=" flex justify-center items-center">
+            <Tag>Integrations</Tag>
+            </div>
+            <h2 className=" text-6xl font-medium mt-6 text-center">Plays well with <span className="text-lime-400">others</span></h2>
+            <p className=" text-center text-xl text-white/50 mt-8 max-w-2xl mx-auto">
+                Layers seamlessly connects with your favorite tools, making it easy to plug into any workflow and collaborate across platforms.
+            </p>
+
+
+            <div>
+
+            </div>
+
+        </div>
+    </section>;
 }
