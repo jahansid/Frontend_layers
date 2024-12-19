@@ -4,8 +4,8 @@ import { ButtonHTMLAttributes,} from "react";
 const buttonStyles = cva(" h-12 rounded-full px-6 font-medium", {
     variants: {
         variant: {
-            primary: " border bg-lime-400 text-neutral-950 border-lime-400",
-            secondary: "border border-white text-white bg-transparent",
+            primary: " border bg-lime-400 text-neutral-950 border-lime-400 hover:bg-transparent hover:text-white transition duration-300",
+            secondary: "border border-white text-white bg-transparent hover:bg-white hover:text-black transition duration-300 ",
 
         },
         size: {
