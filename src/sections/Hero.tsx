@@ -1,21 +1,52 @@
+"use client";
+
 import Button from "@/components/Button";
 import design1Image from "@/assets/images/design-example-1.png";
 import design2Image from "@/assets/images/design-example-2.png";
 import Pointer from "@/components/Pointer";
 import Image from "next/image";
+import { motion, useAnimate } from "framer-motion";
+import { useEffect } from "react";
 
 export default function Hero() {
+    const [leftDesignScope, leftDesignAnimate] = useAnimate();
+    const [leftPointerScope, leftPointerAnimate] = useAnimate();
+
+    useEffect(() => {
+        leftDesignAnimate([
+            [leftDesignScope.current, { opacity: 1 }, { duration: 0.5 }],
+            [leftDesignScope.current, { y: 0, x: 0 }, { duration: 0.5 }],
+        ]);
+        leftPointerAnimate([
+            [leftPointerScope.current, { opacity: 1 }, { duration: 0.5 }],
+            [leftPointerScope.current, { y: 0, x: -100 }, { duration: 0.5 }],
+            [
+                leftPointerScope.current,
+                { x: 0, y: [0, 16, 0] },
+                { duration: 0.5 },
+            ],
+        ]);
+    }, []);
+
     return (
         <section className=" py-24 overflow-x-clip">
             <div className=" container relative ">
-                <div className=" hidden absolute -left-32 top-16 lg:block">
-                    <Image src={design1Image} alt="design1image" />
-                </div>
-                <div className=" absolute -right-64 -top-16 hidden lg:block">
-                    <Image src={design2Image} alt="design2image" />
-                </div>
-                <div className=" absolute left-56 top-96 hidden lg:block">
+                <motion.div
+                    ref={leftDesignScope}
+                    initial={{ opacity: 0, y: 100, x: -100 }}
+                    className=" hidden absolute -left-32 top-16 lg:block"
+                >
+                    <Image src={design1Image} alt="design 1 image" />
+                </motion.div>
+                <motion.div
+                    ref={leftPointerScope}
+                    initial={{ opacity: 0, y: 100, x: -200 }}
+                    className=" absolute left-56 top-96 hidden lg:block"
+                >
                     <Pointer name="Anjali" />
+                </motion.div>
+                <div className=" absolute -right-64 -top-16 hidden lg:block">
+                    <Image src={design2Image} alt="design 2 image" />
                 </div>
                 <div className=" absolute right-80 -top-4 hidden lg:block">
                     <Pointer name="Jahan" />
