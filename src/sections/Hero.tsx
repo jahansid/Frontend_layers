@@ -7,10 +7,13 @@ import Pointer from "@/components/Pointer";
 import Image from "next/image";
 import { motion, useAnimate } from "framer-motion";
 import { useEffect } from "react";
+import cursorYouImage from "@/assets/images/cursor-you.svg";
 
 export default function Hero() {
     const [leftDesignScope, leftDesignAnimate] = useAnimate();
     const [leftPointerScope, leftPointerAnimate] = useAnimate();
+    const [rightDesignScope, rightDesignAnimate] = useAnimate();
+    const [rightPointerScope, rightPointerAnimate] = useAnimate();
 
     useEffect(() => {
         leftDesignAnimate([
@@ -26,17 +29,46 @@ export default function Hero() {
                 { duration: 0.5 },
             ],
         ]);
+        rightDesignAnimate([
+            [
+                rightDesignScope.current,
+                { opacity: 1 },
+                { duration: 0.5, delay: 0.5 },
+            ],
+            [rightDesignScope.current, { y: 0, x: 0 }, { duration: 0.5 }],
+        ]);
+        rightPointerAnimate([
+            [
+                rightPointerScope.current,
+                { opacity: 1 },
+                { duration: 0.5, delay: 1.5 },
+            ],
+            [rightPointerScope.current, { x: 175, y: 0 }, { duration: 0.5 }],
+            [
+                rightPointerScope.current,
+                { x: 0, y: [0, 20, 0] },
+                { duration: 0.5 },
+            ],
+        ]);
     }, []);
 
     return (
-        <section className=" py-24 overflow-x-clip">
+        <section className=" py-24 overflow-x-clip" style={{
+            cursor: `url(${cursorYouImage.src})`
+        }}>
             <div className=" container relative ">
                 <motion.div
                     ref={leftDesignScope}
                     initial={{ opacity: 0, y: 100, x: -100 }}
+                    drag
+                    dragConstraints={{ left: -100, top: -100, right: 100, bottom: 100 }}
                     className=" hidden absolute -left-32 top-16 lg:block"
                 >
-                    <Image src={design1Image} alt="design 1 image" />
+                    <Image
+                        src={design1Image}
+                        alt="design 1 image"
+                        draggable="false"
+                    />
                 </motion.div>
                 <motion.div
                     ref={leftPointerScope}
@@ -45,12 +77,26 @@ export default function Hero() {
                 >
                     <Pointer name="Anjali" />
                 </motion.div>
-                <div className=" absolute -right-64 -top-16 hidden lg:block">
-                    <Image src={design2Image} alt="design 2 image" />
-                </div>
-                <div className=" absolute right-80 -top-4 hidden lg:block">
+                <motion.div
+                    ref={rightDesignScope}
+                    initial={{ opacity: 0, y: 100, x: 100 }}
+                    drag
+                    dragConstraints={{ left: -100, top: -100, right: 100, bottom: 100 }}
+                    className=" absolute -right-64 -top-16 hidden lg:block"
+                >
+                    <Image
+                        src={design2Image}
+                        alt="design 2 image"
+                        draggable="false"
+                    />
+                </motion.div>
+                <motion.div
+                    ref={rightPointerScope}
+                    initial={{ opacity: 0, y: 100, x: 275 }}
+                    className=" absolute right-80 -top-4 hidden lg:block"
+                >
                     <Pointer name="Jahan" />
-                </div>
+                </motion.div>
                 <div className=" flex items-center justify-center">
                     <div className=" inline-flex text-base px-3 py-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full text-neutral-950 font-semibold">
                         ✨ $7.5M seed round raised
