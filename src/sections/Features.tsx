@@ -78,13 +78,21 @@ export default function Features() {
                     <FeatureCard
                         title="Interactive Prototyping"
                         description="Engage your clients with protypes that react to user actions"
-                        className="md:col-span-2 lg:col-span-1"
+                        className="md:col-span-2 lg:col-span-1 group"
                     >
                         <div className=" aspect-video flex items-center justify-center">
-                            <p className=" text-4xl font-extrabold text-center text-white/30">
+                            <p className=" text-4xl font-extrabold text-center text-white/20 group-hover:text-white/10 ">
                                 We&apos;ve achieved{" "}
-                                <span className=" bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                                    incredible
+                                <span className=" bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent relative">
+                                    <span>incredible</span>
+                                    <video
+                                        src="/assets/gifs/gif-incredible.mp4"
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className=" absolute rounded-2xl shadow-lg bottom-full left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition duration-500"
+                                    ></video>
                                 </span>{" "}
                                 growth this year
                             </p>
