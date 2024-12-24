@@ -105,22 +105,29 @@ export default function Features() {
                         className=" md:col-span-2 lg:col-span-1 md:col-start-2 lg:col-start-auto group"
                     >
                         <div className=" aspect-video flex items-center justify-center gap-4">
-                            <Key className=" w-28 outline group-hover:outline-lime-400 outline-offset-4 group-hover:translate-y-1 transition-all duration-500">Shift</Key>
-                            <Key className=" outline group-hover:outline-lime-400 outline-offset-4 group-hover:translate-y-1 transition-all duration-500 delay-150">Alt</Key>
-                            <Key className=" outline group-hover:outline-lime-400 outline-offset-4 group-hover:translate-y-1 transition-all duration-500 delay-300">C</Key>
+                            <Key className=" w-28 outline group-hover:outline-lime-400 outline-offset-4 group-hover:translate-y-1 transition-all duration-500">
+                                Shift
+                            </Key>
+                            <Key className=" outline group-hover:outline-lime-400 outline-offset-4 group-hover:translate-y-1 transition-all duration-500 delay-150">
+                                Alt
+                            </Key>
+                            <Key className=" outline group-hover:outline-lime-400 outline-offset-4 group-hover:translate-y-1 transition-all duration-500 delay-300">
+                                C
+                            </Key>
                         </div>
                     </FeatureCard>
                 </div>
-                <div className=" mt-8 flex flex-wrap gap-3 justify-center">
+                {/* feature list */}
+                <div className=" mt-8 flex flex-wrap gap-3 justify-center ">
                     {features.map((feature) => (
                         <div
                             key={feature}
-                            className=" bg-neutral-900 border border-white/10 inline-flex items-center justify-center px-3 md:px-5 py-1.5 md:py-2 rounded-2xl gap-3"
+                            className=" bg-neutral-900 border border-white/10 inline-flex items-center justify-center px-3 md:px-5 py-1.5 md:py-2 rounded-2xl gap-3 hover:scale-105 group"
                         >
-                            <span className=" size-5 bg-lime-400 rounded-full inline-flex items-center justify-center text-neutral-950 text-xl">
+                            <span className=" size-5 bg-lime-400 rounded-full inline-flex items-center justify-center text-neutral-950 text-xl group-hover:rotate-45 transition-all duration-500 ">
                                 &#10038;
                             </span>
-                            <span className=" font-medium md:text-lg">
+                            <span className=" font-medium md:text-lg ">
                                 {feature}
                             </span>
                         </div>
