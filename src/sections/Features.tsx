@@ -102,12 +102,12 @@ export default function Features() {
                     <FeatureCard
                         title="Keyboard Quick Actions"
                         description="Powerful commands to help you create designs more quickly"
-                        className=" md:col-span-2 lg:col-span-1 md:col-start-2 lg:col-start-auto"
+                        className=" md:col-span-2 lg:col-span-1 md:col-start-2 lg:col-start-auto group"
                     >
                         <div className=" aspect-video flex items-center justify-center gap-4">
-                            <Key className=" w-28">Shift</Key>
-                            <Key>Alt</Key>
-                            <Key>C</Key>
+                            <Key className=" w-28 outline group-hover:outline-lime-400 outline-offset-4 group-hover:translate-y-1 transition-all duration-500">Shift</Key>
+                            <Key className=" outline group-hover:outline-lime-400 outline-offset-4 group-hover:translate-y-1 transition-all duration-500 delay-150">Alt</Key>
+                            <Key className=" outline group-hover:outline-lime-400 outline-offset-4 group-hover:translate-y-1 transition-all duration-500 delay-300">C</Key>
                         </div>
                     </FeatureCard>
                 </div>
